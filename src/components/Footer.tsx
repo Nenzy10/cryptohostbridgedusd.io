@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Github, Twitter, MessageCircle, FileText, ExternalLink } from 'lucide-react';
-import cusdLogo from '@/assets/cusd-logo.png';
+const cusdLogo = '/lovable-uploads/55043495-b296-4ae2-b99c-66d5844229d8.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

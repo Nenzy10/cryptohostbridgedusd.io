@@ -131,6 +131,47 @@ export default {
 					to: {
 						opacity: '1',
 					},
+				},
+				meshRotate: {
+					'0%': {
+						transform: 'rotate(0deg)',
+					},
+					'100%': {
+						transform: 'rotate(360deg)',
+					},
+				},
+				shimmer: {
+					'0%': {
+						backgroundPosition: '-200% 0',
+					},
+					'100%': {
+						backgroundPosition: '200% 0',
+					},
+				},
+				'bounce-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'scale(0.3) translateY(100px)',
+					},
+					'50%': {
+						opacity: '1',
+						transform: 'scale(1.1) translateY(-10px)',
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'scale(1) translateY(0)',
+					},
+				},
+				'gradient-shift': {
+					'0%': {
+						backgroundPosition: '0% 50%',
+					},
+					'50%': {
+						backgroundPosition: '100% 50%',
+					},
+					'100%': {
+						backgroundPosition: '0% 50%',
+					},
 				}
 			},
 			animation: {
@@ -139,7 +180,11 @@ export default {
 				'float': 'float 6s ease-in-out infinite',
 				'pulse-glow': 'pulse-glow 2s ease-in-out infinite alternate',
 				'slide-up': 'slideUp 0.8s ease-out forwards',
-				'fade-in': 'fadeIn 0.6s ease-out'
+				'fade-in': 'fadeIn 0.6s ease-out',
+				'mesh-rotate': 'meshRotate 20s linear infinite',
+				'shimmer': 'shimmer 1.5s ease-in-out',
+				'bounce-in': 'bounce-in 0.8s ease-out forwards',
+				'gradient-shift': 'gradient-shift 3s ease infinite'
 			}
 		}
 	},

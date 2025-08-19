@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from './ui/button';
 import { Menu, X, Download, Wallet, ExternalLink } from 'lucide-react';
-import cusdLogo from '@/assets/cusd-logo.png';
+const cusdLogo = '/lovable-uploads/55043495-b296-4ae2-b99c-66d5844229d8.png';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,11 +56,11 @@ const Navigation = () => {
 
           {/* Action Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button variant="outline" size="sm" className="group">
-              <Download className="w-4 h-4 mr-2 group-hover:animate-pulse" />
+            <Button variant="crypto" size="sm" className="group">
+              <Download className="w-4 h-4 mr-2 group-hover:animate-bounce" />
               Whitepaper
             </Button>
-            <Button className="group glow-effect">
+            <Button variant="glow" size="sm" className="group">
               <Wallet className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
               Connect Wallet
             </Button>
@@ -94,11 +94,11 @@ const Navigation = () => {
                 </Link>
               ))}
               <div className="pt-4 space-y-2">
-                <Button variant="outline" size="sm" className="w-full">
+                <Button variant="crypto" size="sm" className="w-full">
                   <Download className="w-4 h-4 mr-2" />
                   Whitepaper
                 </Button>
-                <Button className="w-full">
+                <Button variant="glow" size="sm" className="w-full">
                   <Wallet className="w-4 h-4 mr-2" />
                   Connect Wallet
                 </Button>
