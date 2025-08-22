@@ -15,7 +15,8 @@ import FAQ from "./pages/FAQ";
 import Compliance from "./pages/Compliance";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-import MarketWidget from "@/components/MarketWidget";
+import MarketWidget from "./components/MarketWidget";
+
 
 
 const queryClient = new QueryClient();
