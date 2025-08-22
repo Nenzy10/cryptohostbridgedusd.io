@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, Download, Shield, Globe, Zap, Copy, CheckCircle, TrendingUp, Users, DollarSign } from 'lucide-react';
-
-
 const cusdLogo = '/lovable-uploads/55043495-b296-4ae2-b99c-66d5844229d8.png';
 
 const Index = () => {
