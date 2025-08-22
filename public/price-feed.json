@@ -1,0 +1,15 @@
+{
+  "symbol": "CUSD",
+  "name": "Cryptohost Bridged USD",
+  "price_usd": "1.0000",
+  "decimals": 18,
+  "last_updated": "2025-08-13T00:00:00Z",
+  "source": "https://cryptohostbridgedusd.io",
+  "token_addresses": {
+    "ethereum": "0x54fdc17E702DC85E33C5aeCFaE57c76cECf23C4c",
+    "bsc_current": "0x7f32650c35Cf5a90447B922932b09262626a1346",
+    "bsc_v1": "0x6665B556A5e46A314d45334368fD56A65A5979FA",
+    "arbitrum": "0x82656b01211ed760f3ca7f597b05928cd72c1971",
+    "optimism": "0x82656b01211ed760f3ca7f597b05928cd72c1971"
+  }
+}
