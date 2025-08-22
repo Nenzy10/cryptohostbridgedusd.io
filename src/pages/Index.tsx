@@ -2,13 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, Download, Shield, Globe, Zap, Copy, CheckCircle, TrendingUp, Users, DollarSign } from 'lucide-react';
-import MarketWidget from "@/components/MarketWidget";
 
-<Stats />
-<section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-  <MarketWidget />
-</section>
-<Overview />
 
 const cusdLogo = '/lovable-uploads/55043495-b296-4ae2-b99c-66d5844229d8.png';
 
