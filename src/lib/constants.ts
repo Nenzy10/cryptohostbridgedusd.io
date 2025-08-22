@@ -8,7 +8,9 @@ export const LINKS = {
   telegram: "https://t.me/NenzyBrown",
   github: "https://github.com/Nenzy10/cryptohostbridgedusd.io",
 };
-export const PRICE_FEED_URL = "/price-feed.json"; // same-origin = no CORS issues
+// add (or update) this line:
+export const PRICE_FEED_URL = "/price-feed.json";
+
 
 export const CHAINS = {
   ethereum: { chainId: "0x1", chainName: "Ethereum Mainnet", nativeCurrency: { name: "Ether", symbol: "ETH", decimals: 18 }, rpcUrls: ["https://rpc.ankr.com/eth"], blockExplorerUrls: ["https://etherscan.io"] },
