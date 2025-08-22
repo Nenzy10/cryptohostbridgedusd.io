@@ -4,6 +4,7 @@ export type PricePoint = { t: number; price: number };
 export function usePriceFeed(url: string, pollMs = 15000, maxPoints = 120) {
   const [data, setData] = useState<PricePoint[]>([]);
   const baseline = useRef<number | null>(null);
+
   useEffect(() => {
     let timer: any, mounted = true;
     const poll = async () => {
@@ -19,8 +20,10 @@ export function usePriceFeed(url: string, pollMs = 15000, maxPoints = 120) {
     poll();
     return () => { mounted = false; if (timer) clearTimeout(timer); };
   }, [url, pollMs, maxPoints]);
+
   const latest = data.length ? data[data.length - 1].price : null;
   const base = baseline.current ?? latest ?? null;
   const changePct = latest != null && base != null ? ((latest - base) / base) * 100 : 0;
+
   return { data, latest, changePct };
 }
