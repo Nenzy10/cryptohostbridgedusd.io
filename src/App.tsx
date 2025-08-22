@@ -7,6 +7,9 @@ import Layout from "./components/Layout";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Tokenomics from "./pages/Tokenomics";
+import Security from "./pages/Security";
+import Team from "./pages/Team";
+import Partnerships from "./pages/Partnerships";
 import Roadmap from "./pages/Roadmap";
 import FAQ from "./pages/FAQ";
 import Compliance from "./pages/Compliance";
@@ -26,6 +29,9 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
             <Route path="/tokenomics" element={<Tokenomics />} />
+            <Route path="/security" element={<Security />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/partnerships" element={<Partnerships />} />
             <Route path="/roadmap" element={<Roadmap />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/compliance" element={<Compliance />} />

@@ -12,9 +12,12 @@ const Navigation = () => {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Tokenomics', path: '/tokenomics' },
+    { name: 'Security', path: '/security' },
+    { name: 'Team', path: '/team' },
+    { name: 'Partners', path: '/partnerships' },
     { name: 'Roadmap', path: '/roadmap' },
-    { name: 'FAQ', path: '/faq' },
     { name: 'Compliance', path: '/compliance' },
+    { name: 'FAQ', path: '/faq' },
     { name: 'Contact', path: '/contact' },
   ];
 
