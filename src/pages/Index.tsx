@@ -1,11 +1,34 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowRight, Download, Shield, Globe, Zap, Copy, CheckCircle, TrendingUp, Users, DollarSign } from 'lucide-react';
+import { ArrowRight, Download, Shield, Globe, Zap, Copy, CheckCircle, TrendingUp, Users, DollarSign, Activity } from 'lucide-react';
 const cusdLogo = '/lovable-uploads/55043495-b296-4ae2-b99c-66d5844229d8.png';
 
 const Index = () => {
   const [copiedAddress, setCopiedAddress] = useState<string | null>(null);
+  const [priceData, setPriceData] = useState({ price: 1.00, change: 0.0 });
+
+  // Fetch real-time price data
+  useEffect(() => {
+    const fetchPriceData = async () => {
+      try {
+        const response = await fetch('https://cryptohostbridgedusd.io/price-feed.json');
+        const data = await response.json();
+        setPriceData({
+          price: data.price || 1.00,
+          change: data.change24h || 0.0
+        });
+      } catch (error) {
+        console.log('Using default price data');
+        setPriceData({ price: 1.00, change: 0.0 });
+      }
+    };
+
+    fetchPriceData();
+    const interval = setInterval(fetchPriceData, 60000); // Update every minute
+
+    return () => clearInterval(interval);
+  }, []);
 
   const contractAddresses = [
     {
@@ -41,9 +64,9 @@ const Index = () => {
   ];
 
   const stats = [
-    { label: 'Maximum Supply', value: '4.98 Sextillion', icon: DollarSign },
+    { label: 'Current Price', value: `$${priceData.price.toFixed(4)}`, icon: DollarSign },
+    { label: '24h Change', value: `${priceData.change >= 0 ? '+' : ''}${priceData.change.toFixed(2)}%`, icon: Activity },
     { label: 'Blockchain Networks', value: '5+', icon: Globe },
-    { label: 'Stability Target', value: '$1.00 USD', icon: TrendingUp },
     { label: 'Verified Holders', value: '15K+', icon: Users }
   ];
 
@@ -102,7 +125,8 @@ const Index = () => {
                 <img 
                   src={cusdLogo} 
                   alt="CUSD - Cryptohost Bridged USD Logo" 
-                  className="relative h-32 w-32 lg:h-40 lg:w-40 animate-float hover:scale-110 transition-transform duration-500 interactive-element drop-shadow-2xl"
+                  className="relative h-32 w-32 lg:h-40 lg:w-40 animate-float hover:scale-110 transition-transform duration-500 interactive-element drop-shadow-2xl rounded-full bg-transparent"
+                  style={{ backgroundColor: 'transparent' }}
                 />
                 
                 {/* Orbiting Elements */}

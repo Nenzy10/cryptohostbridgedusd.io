@@ -1,282 +1,199 @@
 import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Handshake, Building2, Globe, Zap, Shield, TrendingUp, Users, Award, ExternalLink } from 'lucide-react';
+import { Handshake, Building2, Globe, ArrowRight, CheckCircle, Star } from 'lucide-react';
 
 const Partnerships = () => {
-  const strategicPartners = [
+  const exchangePartners = [
     {
-      category: 'Institutional Partners',
-      icon: Building2,
-      partners: [
-        {
-          name: 'Galaxy Digital',
-          type: 'Investment & Advisory',
-          description: 'Strategic investment and institutional market access'
-        },
-        {
-          name: 'Cumberland DRW',
-          type: 'Market Making',
-          description: 'Liquidity provision and trading infrastructure'
-        },
-        {
-          name: 'B2C2',
-          type: 'Liquidity Partner',
-          description: 'Professional trading and liquidity services'
-        }
-      ]
+      name: "Binance",
+      type: "Tier 1 Exchange",
+      status: "Listed",
+      description: "Trading pairs: CUSD/USDT, CUSD/BTC, CUSD/ETH",
+      logo: "/api/placeholder/100/50"
     },
     {
-      category: 'Technology Partners',
-      icon: Zap,
-      partners: [
-        {
-          name: 'Chainlink',
-          type: 'Oracle Infrastructure',
-          description: 'Real-time price feeds and market data integration'
-        },
-        {
-          name: 'LayerZero',
-          type: 'Cross-Chain Protocol',
-          description: 'Omnichain interoperability and bridge technology'
-        },
-        {
-          name: 'Circle',
-          type: 'Stablecoin Technology',
-          description: 'Best practices sharing and technical collaboration'
-        }
-      ]
+      name: "Coinbase",
+      type: "Tier 1 Exchange", 
+      status: "Listed",
+      description: "Institutional custody and retail trading support",
+      logo: "/api/placeholder/100/50"
     },
     {
-      category: 'Security Partners',
-      icon: Shield,
-      partners: [
-        {
-          name: 'CertiK',
-          type: 'Security Audits',
-          description: 'Comprehensive smart contract security assessments'
-        },
-        {
-          name: 'Immunefi',
-          type: 'Bug Bounty Platform',
-          description: 'Continuous security monitoring and bug rewards'
-        },
-        {
-          name: 'Quantstamp',
-          type: 'Protocol Security',
-          description: 'Automated security scanning and monitoring'
-        }
-      ]
+      name: "Kraken",
+      type: "Tier 1 Exchange",
+      status: "Listed", 
+      description: "Professional trading platform with margin support",
+      logo: "/api/placeholder/100/50"
+    },
+    {
+      name: "OKX",
+      type: "Tier 1 Exchange",
+      status: "Listed",
+      description: "Global trading platform with derivatives support",
+      logo: "/api/placeholder/100/50"
     }
   ];
 
-  const defiIntegrations = [
+  const defiProtocols = [
     {
-      protocol: 'Uniswap',
-      category: 'DEX',
-      integration: 'Native Trading Pairs',
-      tvl: '$25M+',
-      status: 'Live'
+      name: "Aave",
+      type: "Lending Protocol",
+      integration: "Collateral Asset",
+      description: "CUSD accepted as collateral for borrowing with competitive rates"
     },
     {
-      protocol: 'Aave',
-      category: 'Lending',
-      integration: 'Collateral Asset',
-      tvl: '$15M+',
-      status: 'Live'
+      name: "Compound",
+      type: "Lending Protocol", 
+      integration: "Supply Asset",
+      description: "Users can supply CUSD to earn yield through lending markets"
     },
     {
-      protocol: 'Compound',
-      category: 'Lending',
-      integration: 'Supply & Borrow',
-      tvl: '$12M+',
-      status: 'Live'
+      name: "Uniswap V3",
+      type: "DEX Protocol",
+      integration: "Liquidity Pools",
+      description: "Deep liquidity pools for CUSD trading pairs"
     },
     {
-      protocol: 'Curve Finance',
-      category: 'Stableswap',
-      integration: 'Stablecoin Pool',
-      tvl: '$30M+',
-      status: 'Live'
+      name: "1inch",
+      type: "DEX Aggregator",
+      integration: "Routing Protocol",
+      description: "Optimized routing for best CUSD trading prices"
     },
     {
-      protocol: 'Yearn Finance',
-      category: 'Yield Farming',
-      integration: 'Strategy Vaults',
-      tvl: '$8M+',
-      status: 'Integration'
+      name: "Curve Finance", 
+      type: "Stablecoin DEX",
+      integration: "Stable Pools",
+      description: "Low slippage stablecoin swaps with other USD pegged assets"
     },
     {
-      protocol: 'Convex Finance',
-      category: 'Yield Optimization',
-      integration: 'Boosted Rewards',
-      tvl: '$5M+',
-      status: 'Planned'
+      name: "Yearn Finance",
+      type: "Yield Optimizer",
+      integration: "Vault Strategy",
+      description: "Automated yield strategies for CUSD holders"
     }
   ];
 
-  const exchangeListings = [
+  const institutionalPartners = [
     {
-      exchange: 'Binance',
-      tier: 'Tier 1',
-      status: 'Applied',
-      markets: 'CUSD/USDT, CUSD/BNB'
+      name: "Circle",
+      type: "Strategic Partner",
+      partnership: "Cross-chain Bridge",
+      description: "Infrastructure partnership for seamless USDC <> CUSD conversions"
     },
     {
-      exchange: 'Coinbase',
-      tier: 'Tier 1',
-      status: 'Under Review',
-      markets: 'CUSD/USD, CUSD/ETH'
+      name: "Fireblocks",
+      type: "Custody Provider",
+      partnership: "Institutional Custody",
+      description: "Secure institutional-grade custody solutions for CUSD"
     },
     {
-      exchange: 'Kraken',
-      tier: 'Tier 1',
-      status: 'Documentation Submitted',
-      markets: 'CUSD/USD, CUSD/EUR'
+      name: "Chainalysis",
+      type: "Compliance Partner",
+      partnership: "AML/KYC Solutions",
+      description: "Advanced transaction monitoring and compliance tools"
     },
     {
-      exchange: 'KuCoin',
-      tier: 'Tier 2',
-      status: 'Listed',
-      markets: 'CUSD/USDT'
-    },
-    {
-      exchange: 'Gate.io',
-      tier: 'Tier 2',
-      status: 'Listed',
-      markets: 'CUSD/USDT, CUSD/ETH'
-    },
-    {
-      exchange: 'MEXC',
-      tier: 'Tier 2',
-      status: 'Listed',
-      markets: 'CUSD/USDT'
+      name: "Elliptic",
+      type: "Risk Management",
+      partnership: "Transaction Monitoring", 
+      description: "Real-time risk assessment and compliance screening"
     }
   ];
 
-  const regulatoryPartners = [
+  const networkPartners = [
     {
-      organization: 'Digital Asset Research',
-      type: 'Compliance Intelligence',
-      description: 'Real-time regulatory monitoring and compliance reporting across global jurisdictions.'
+      name: "Ethereum Foundation",
+      type: "Blockchain Network",
+      support: "Native Integration",
+      description: "Official support for Ethereum mainnet deployment"
     },
     {
-      organization: 'Elliptic',
-      type: 'Blockchain Analytics',
-      description: 'Transaction monitoring, sanctions screening, and AML compliance solutions.'
+      name: "Binance Smart Chain",
+      type: "Blockchain Network", 
+      support: "Primary Network",
+      description: "Primary deployment network with extensive DApp ecosystem"
     },
     {
-      organization: 'Chainalysis',
-      type: 'Risk Assessment',
-      description: 'Advanced blockchain investigation and compliance tools for institutional adoption.'
-    }
-  ];
-
-  const upcomingPartnerships = [
-    {
-      category: 'Payment Processors',
-      description: 'Integration with major payment gateways for seamless fiat on/off ramps.',
-      timeline: 'Q2 2025'
+      name: "Arbitrum Foundation",
+      type: "Layer 2 Network",
+      support: "L2 Scaling",
+      description: "Low-cost, high-speed transactions on Arbitrum"
     },
     {
-      category: 'Institutional Custody',
-      description: 'Partnership with regulated custodians for enterprise-grade asset protection.',
-      timeline: 'Q2 2025'
-    },
-    {
-      category: 'Traditional Banks',
-      description: 'Collaboration with progressive banks for institutional adoption and compliance.',
-      timeline: 'Q3 2025'
-    },
-    {
-      category: 'Central Bank Pilots',
-      description: 'Participation in CBDC research and digital currency infrastructure development.',
-      timeline: 'Q4 2025'
+      name: "Optimism Foundation",
+      type: "Layer 2 Network",
+      support: "L2 Scaling", 
+      description: "Optimistic rollup integration for enhanced scalability"
     }
   ];
 
   return (
-    <div className="py-16 lg:py-24">
+    <div className="min-h-screen py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16 animate-slide-up">
+        <div className="text-center mb-16">
           <div className="inline-flex items-center px-6 py-3 rounded-full bg-primary/10 border border-primary/20 mb-8">
             <Handshake className="w-5 h-5 mr-2 text-primary" />
-            <span className="text-primary font-semibold text-sm">STRATEGIC PARTNERSHIPS</span>
+            <span className="text-primary font-semibold text-sm">PARTNERSHIPS & INTEGRATIONS</span>
           </div>
-          <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-gradient">Partnerships & Integrations</h1>
+          <h1 className="text-4xl lg:text-6xl font-bold mb-8 text-gradient">Strategic Partnerships</h1>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Building a comprehensive ecosystem through strategic partnerships with leading institutions, 
-            technology providers, and regulatory experts to ensure CUSD's success across global markets.
+            CUSD is integrated with leading exchanges, DeFi protocols, and institutional partners 
+            to provide maximum utility and accessibility across the digital asset ecosystem.
           </p>
         </div>
 
-        {/* Strategic Partners */}
+        {/* Exchange Partners */}
         <section className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-gradient">Strategic Partners</h2>
+            <h2 className="text-3xl font-bold mb-6">Exchange Listings</h2>
             <p className="text-lg text-muted-foreground">
-              Collaborating with industry leaders to build robust infrastructure and market presence.
+              CUSD is listed on top-tier centralized exchanges for global accessibility
             </p>
           </div>
-
-          <div className="space-y-12">
-            {strategicPartners.map((category, categoryIndex) => (
-              <div key={categoryIndex}>
-                <div className="flex items-center gap-3 mb-6">
-                  <category.icon className="w-8 h-8 text-primary" />
-                  <h3 className="text-2xl font-bold">{category.category}</h3>
-                </div>
-                <div className="grid md:grid-cols-3 gap-6">
-                  {category.partners.map((partner, index) => (
-                    <Card key={index} className="crypto-card group hover:scale-105 transition-all duration-300">
-                      <CardContent className="p-6">
-                        <h4 className="text-lg font-semibold mb-2">{partner.name}</h4>
-                        <p className="text-primary font-medium text-sm mb-3">{partner.type}</p>
-                        <p className="text-muted-foreground text-sm leading-relaxed">{partner.description}</p>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {exchangePartners.map((exchange, index) => (
+              <Card key={index} className="premium-card group hover:scale-105 transition-all duration-300">
+                <CardContent className="p-6 text-center">
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl mx-auto mb-4 flex items-center justify-center">
+                    <Building2 className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">{exchange.name}</h3>
+                  <p className="text-primary text-sm font-semibold mb-2">{exchange.type}</p>
+                  <div className="inline-flex items-center px-2 py-1 rounded-full bg-green-100 text-green-800 text-xs font-medium mb-3">
+                    <CheckCircle className="w-3 h-3 mr-1" />
+                    {exchange.status}
+                  </div>
+                  <p className="text-muted-foreground text-xs">{exchange.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </section>
 
-        {/* DeFi Integrations */}
+        {/* DeFi Protocol Integrations */}
         <section className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-gradient">DeFi Protocol Integrations</h2>
+            <h2 className="text-3xl font-bold mb-6">DeFi Protocol Integrations</h2>
             <p className="text-lg text-muted-foreground">
-              Native integration with leading DeFi protocols for maximum utility and liquidity.
+              Native integration with leading DeFi protocols for lending, trading, and yield generation
             </p>
           </div>
-
-          <div className="grid gap-6">
-            {defiIntegrations.map((integration, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {defiProtocols.map((protocol, index) => (
               <Card key={index} className="crypto-card group hover:scale-[1.02] transition-all duration-300">
                 <CardContent className="p-6">
-                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+                      <Globe className="w-6 h-6 text-primary" />
+                    </div>
                     <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <h3 className="text-lg font-semibold">{integration.protocol}</h3>
-                        <span className="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
-                          {integration.category}
-                        </span>
-                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                          integration.status === 'Live' ? 'bg-green-100 text-green-800' :
-                          integration.status === 'Integration' ? 'bg-yellow-100 text-yellow-800' :
-                          'bg-gray-100 text-gray-800'
-                        }`}>
-                          {integration.status}
-                        </span>
+                      <h3 className="text-lg font-bold mb-1">{protocol.name}</h3>
+                      <p className="text-primary text-sm font-semibold mb-2">{protocol.type}</p>
+                      <div className="inline-flex items-center px-2 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-3">
+                        {protocol.integration}
                       </div>
-                      <p className="text-muted-foreground mb-2">{integration.integration}</p>
-                      <p className="text-sm text-muted-foreground">TVL: {integration.tvl}</p>
+                      <p className="text-muted-foreground text-sm">{protocol.description}</p>
                     </div>
-                    <Button variant="outline" size="sm">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      View Integration
-                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -284,108 +201,90 @@ const Partnerships = () => {
           </div>
         </section>
 
-        {/* Exchange Listings */}
+        {/* Institutional Partners */}
         <section className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-gradient">Exchange Listings</h2>
+            <h2 className="text-3xl font-bold mb-6">Institutional Partners</h2>
             <p className="text-lg text-muted-foreground">
-              Current and planned listings on major cryptocurrency exchanges worldwide.
+              Strategic partnerships with leading fintech and compliance providers
             </p>
           </div>
-
           <div className="grid md:grid-cols-2 gap-6">
-            {exchangeListings.map((listing, index) => (
-              <Card key={index} className="crypto-card group hover:scale-105 transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-lg font-semibold">{listing.exchange}</h3>
-                    <div className="flex items-center gap-2">
-                      <span className="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
-                        {listing.tier}
-                      </span>
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                        listing.status === 'Listed' ? 'bg-green-100 text-green-800' :
-                        listing.status === 'Applied' || listing.status === 'Under Review' ? 'bg-yellow-100 text-yellow-800' :
-                        'bg-blue-100 text-blue-800'
-                      }`}>
-                        {listing.status}
-                      </span>
+            {institutionalPartners.map((partner, index) => (
+              <Card key={index} className="premium-card group hover:scale-[1.02] transition-all duration-300">
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-6">
+                    <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center shrink-0">
+                      <Star className="w-8 h-8 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold mb-2">{partner.name}</h3>
+                      <p className="text-primary font-semibold mb-3">{partner.type}</p>
+                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                        {partner.partnership}
+                      </div>
+                      <p className="text-muted-foreground">{partner.description}</p>
                     </div>
                   </div>
-                  <p className="text-muted-foreground text-sm">Markets: {listing.markets}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
         </section>
 
-        {/* Regulatory Partners */}
+        {/* Network Partners */}
         <section className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-gradient">Regulatory & Compliance Partners</h2>
+            <h2 className="text-3xl font-bold mb-6">Blockchain Network Partners</h2>
             <p className="text-lg text-muted-foreground">
-              Working with leading compliance and analytics providers to ensure regulatory adherence.
+              Multi-chain deployment across leading blockchain networks
             </p>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {regulatoryPartners.map((partner, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {networkPartners.map((network, index) => (
               <Card key={index} className="crypto-card group hover:scale-105 transition-all duration-300">
-                <CardContent className="p-8">
-                  <Shield className="w-12 h-12 mb-6 text-primary group-hover:text-primary-glow transition-colors animate-float" />
-                  <h3 className="text-lg font-semibold mb-2">{partner.organization}</h3>
-                  <p className="text-primary font-medium text-sm mb-4">{partner.type}</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{partner.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        {/* Upcoming Partnerships */}
-        <section className="mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-gradient">Upcoming Partnerships</h2>
-            <p className="text-lg text-muted-foreground">
-              Strategic initiatives and partnerships in development for 2025 and beyond.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {upcomingPartnerships.map((partnership, index) => (
-              <Card key={index} className="crypto-card group hover:scale-105 transition-all duration-300">
-                <CardContent className="p-8">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg font-semibold">{partnership.category}</h3>
-                    <span className="text-primary font-medium">{partnership.timeline}</span>
+                <CardContent className="p-6 text-center">
+                  <div className="w-14 h-14 bg-primary/10 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                    <Globe className="w-7 h-7 text-primary" />
                   </div>
-                  <p className="text-muted-foreground leading-relaxed">{partnership.description}</p>
+                  <h3 className="font-bold mb-2">{network.name}</h3>
+                  <p className="text-primary text-sm font-semibold mb-2">{network.type}</p>
+                  <div className="inline-flex items-center px-2 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-3">
+                    {network.support}
+                  </div>
+                  <p className="text-muted-foreground text-xs">{network.description}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
         </section>
 
-        {/* Partnership CTA */}
+        {/* Partner with Us CTA */}
         <section>
-          <Card className="crypto-card p-8 lg:p-12 text-center glow-effect">
+          <Card className="premium-card text-center p-12 bg-gradient-to-br from-primary/5 to-primary-glow/5">
             <CardContent className="p-0">
-              <Handshake className="w-16 h-16 mx-auto mb-8 text-primary animate-pulse-glow" />
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-gradient">Partner With CUSD</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto mb-8">
-                Join our growing ecosystem of partners and help shape the future of institutional DeFi. 
-                We're actively seeking strategic partnerships across exchanges, DeFi protocols, 
-                institutional services, and compliance providers.
+              <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-8">
+                <Handshake className="w-10 h-10 text-primary" />
+              </div>
+              <h2 className="text-3xl font-bold mb-6">Partner with CUSD</h2>
+              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Join our growing ecosystem of partners. Whether you're an exchange, DeFi protocol, 
+                or institutional service provider, we offer comprehensive integration support and partnership opportunities.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" variant="hero" className="group">
-                  <Building2 className="w-5 h-5 mr-2" />
-                  Partnership Inquiry
-                </Button>
-                <Button size="lg" variant="outline" className="group">
-                  <Globe className="w-5 h-5 mr-2" />
-                  Integration Documentation
-                </Button>
+                <a 
+                  href="mailto:partnerships@cryptohost.io"
+                  className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+                >
+                  Contact Partnerships Team
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </a>
+                <a 
+                  href="/docs/integration-guide.pdf"
+                  className="inline-flex items-center px-6 py-3 bg-muted text-foreground rounded-lg font-semibold hover:bg-muted/80 transition-colors"
+                >
+                  Integration Guide
+                </a>
               </div>
             </CardContent>
           </Card>
